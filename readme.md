@@ -1,9 +1,11 @@
 md = markdown #É uma linguagem de marcação normalmente utilizada para
 arquivos readme
 Pode salvar utilizando Ctrl S
+
 git --version #prints the version of your git, if it is the latest version and if it is correctly installed.
 Vamos na pasta do projeto git e clicamos com o botão direito e clicamos em 'Git Bash Here'
 Inicializamos um Repositório Git Vazio digitando:
+
 git init
 Cria uma pasta oculta com o nome .git no nosso projetogit
 Não devemos apagar essa pasta, pois ela que contém as informações e configurações do nosso git
@@ -21,16 +23,19 @@ Se você digitou o nome do arquivo errado, com a letra inicial maiúscula, por e
 Caso tenha digitado corretamente, ele irá reconhecer a presença de um novo arquivo: readme.md
 Já que sabemos que o arquivo certo está no staging, podemos dar commit:
 git commit -m 'primeiro commit'
+
 seguindo a sintaxe:
 git commit -m "text/title"
 Ele avisará que o x arquivos mudaram, com y inserções 
 Ele dirá que a alteração foi feita na master branch/root
 Talvez para dar commit você tenha que digitar:
+
 git config --global user.email "email"
 git config --global user.name "username"
 Isso serve para registrar o usuário que fez a alteração/commit
 Vendo o git status novamente, não terá nada adicionado para commitar, pois já commitamos o arquivo.
 Digitando:
+
 git branch -M "main"
 Alteramos o nome da nossa branch master para main (que passou a ser utilizada recentemente?)
 Nós podemos baixar versões mais visuais, com GUI Clients do site do GIT
@@ -50,6 +55,7 @@ e o link é o url específico do nosso repositório no github
 Com isso, realizamos a conexão entre o repositório git da nossa máquina e o repositório do github.
 No entanto, ainda não foi enviado nenhum arquivo para o github
 Para isso, utilizaremos o segundo comando que o github nos manda usar:
+
 git push -u origin main
 push corresponde a um empurrão dos commits que estão no repositório local para o repositório github
 -u corresponde ao comando de upload ou update?
@@ -60,3 +66,17 @@ Atualizamos o site e nosso commit está lá
 clear
 limpa o git bash
 git add . #Vai mandar todos os os arquivos para a área de staging, sem precisar inserir o nome de todos eles.
+Depois de sincronizarmos nosso git com o github, não precisamos usar novamente o git remote add origin <link>
+Só precisamos utilizar o push:
+git push origin main
+
+Para criarmos uma nova branch, utilizamos:
+git checkout -b <'nome da branch'>
+exemplo:
+git checkout -b 'novo-botão'
+Esse comando cria uma nova branch e já altera para que as novas modificações sejam feitas nela.
+A nova branch pode servir para um novo recurso, criando outro arquivo. Ou pode ser uma branch com alterações em cima de arquivos já existentes.
+Criada uma nova branch, podemos realizar o processo de envio:
+git add . 
+git commit -m 'v2.2 branch botao'
+git push origin novo-botão #pois é o nome da branch que estamos utilizando agora
