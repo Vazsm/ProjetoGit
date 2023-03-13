@@ -78,5 +78,43 @@ Esse comando cria uma nova branch e já altera para que as novas modificações 
 A nova branch pode servir para um novo recurso, criando outro arquivo. Ou pode ser uma branch com alterações em cima de arquivos já existentes.
 Criada uma nova branch, podemos realizar o processo de envio:
 git add . 
+git status
 git commit -m 'v2.2 branch botao'
 git push origin novo-botão #pois é o nome da branch que estamos utilizando agora
+
+Agora, nosso github foi atualizado e temos duas branchs nele:
+a Main e a Novo-botão. O gituhub nos indica quantos commits a nova branch está à frente da branch Main.
+Podemos acessar a nova branch e os arquivos atualizados que ela tem.
+
+No git bash, podemos alternar entre branchs, utilizando o comando:
+git checkout <nome da branch>
+exemplo:
+git checkout main
+git checkout novo-botão
+
+Podemos juntar/fundir branchs indo na branch que você quer atualizar, nesse caso a main, e escrever o comando:
+git merge novo-botão 
+Então, utilizando/modificando a branch main, iremos fundir ela com a nova branch novo-botão.
+Agora precisamos enviar essa atualização da Main para o github, utilizando o comando:
+git push origin main
+
+Para copiar um projeto do github, crie uma pasta no seu computador, e dentro dela abra o git bash. Vá no repositório do projeto e clique em <code>, copie o link https do clone e digite o comando no git:
+git clone <link>
+Pronto, agora sua pasta já possui o projeto clonado.
+
+Para obter uma versão atualizada de algum projeto do github que você já tenha no seu computador, vá na pasta e abra o git desse projeto. Agora:
+cd <nome do projeto>
+exemplo:
+cd gittutorial
+Esse comando é para abrir o repositório do projeto, para poder modificar as branchs.
+A pasta do projeto está fechada quando não há o nome da branch que você está utilizando. Para isso, utilize o comando acima.
+Agora que a pasta já está aberta, digite:
+git pull
+Esse comando vai puxar as novas atualizações/versões do projeto.
+
+Fork será a cópia do projeto/repositório do github de alguém para o seu próprio github. Sempre será avisado que o projeto foi de um fork em alguém.
+
+Pull request é quando alguém faz alterações no projeto de outra pessoa e envia as alterações para a pessoa, para ela aceitar ou recusar as alterações no projeto dela.
+Byee
+
+testando
